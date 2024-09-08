@@ -1,0 +1,14 @@
+<suite name="Body Mass Index Test">
+    <test name="Metric Unit on Firefox">
+        <parameter name="browser" value="Firefox"/>
+        <classes>
+            <class name="calculator.BodyMassIndexTest"/>
+        </classes>
+    </test>
+    <test name="Metric Unit on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="calculator.BodyMassIndexTest"/>
+        </classes>
+    </test>
+</suite>
