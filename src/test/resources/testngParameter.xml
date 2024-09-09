@@ -1,0 +1,9 @@
+<suite name="Suite">
+    <test name="Test">
+        <parameter name="username" value="tanvy"/>
+        <parameter name="password" value="12345"/>
+        <classes>
+            <class name="annotations.TestLogin"/>
+        </classes>
+    </test>
+</suite>

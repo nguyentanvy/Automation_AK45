@@ -1,0 +1,23 @@
+<suite name="Suite1" verbose="1">
+<!--    <test name="NoPackage">-->
+<!--        <classes>-->
+<!--            <class name="NoPackgeTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Regression1">-->
+<!--        <classes >-->
+<!--            <class name="annotations.TestExecuteFactory"/>-->
+<!--            <class name="annotations.TestFactory" />-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Login">
+        <classes>
+            <class name="pom.HomePage"/>
+            <class name="pom.Login"/>
+            <class name="pom.Untils"/>
+            <class name="pom.TestLogin"/>
+        </classes>
+    </test>
+</suite>
