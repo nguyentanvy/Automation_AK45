@@ -1,7 +1,5 @@
-<suite name="Suite">
-    <test name="Test">
-        <parameter name="username" value="tanvy"/>
-        <parameter name="password" value="12345"/>
+<suite name="SuiteGroup">
+    <test name="TestGroup">
         <groups>
             <run>
                 <include name="group1"/>
@@ -9,7 +7,7 @@
             </run>
         </groups>
         <classes>
-            <class name="annotations.TestLogin"/>
+            <class name="testbeforegroup.TestBeforeGroup"/>
         </classes>
     </test>
 </suite>
