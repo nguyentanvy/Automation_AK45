@@ -6,18 +6,21 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
+import supports.Browser;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class TestCapture {
+    WebDriver driver;
     @Test
     void testDriver()  throws IOException {
-        WebDriver driver = new ChromeDriver();
-        driver.get("http://120.72.107.188:3066/#banner");
+         driver = new ChromeDriver();
+        driver.get("https://tvn.gitbook.io/selenium-java/examples/5.15.-capture-screenshot");
         try {
             TakesScreenshot Trs = ((TakesScreenshot) driver);
             TimeUnit.SECONDS.sleep(10);
@@ -31,17 +34,30 @@ public class TestCapture {
 
 
     }
-    @AfterTest
-    void testCapture(ITestResult testResult) throws IOException {
-        if(!testResult.isSuccess()){
-            File file = ((TakesScreenshot) new ChromeDriver()).getScreenshotAs(OutputType.FILE);
-            File DestFile=new File("./target/screenshot/"
-                    +testResult.getMethod().getMethodName()
-                    +  "-"
-                    +System.currentTimeMillis()+".png");
-
-            FileUtils.copyFile(file, DestFile);
+    @AfterMethod
+    void captureScreen(ITestResult iTestResult){
+        if (!iTestResult.isSuccess()){
+            Browser.captureScreenShot(iTestResult.getInstanceName());
         }
-
+    }
+//    @AfterMethod
+//    void testCapture(ITestResult testResult) throws IOException {
+//        if(!testResult.isSuccess()){
+//            File file = ((TakesScreenshot) new ChromeDriver()).getScreenshotAs(OutputType.FILE);
+//            File DestFile=new File("./target/screenshot/"
+//                    +testResult.getMethod().getMethodName()
+//                    +  "-"
+//                    +System.currentTimeMillis()+".png");
+//
+//            FileUtils.copyFile(file, DestFile);
+//        }
+//
+//
+//    }
+    @AfterTest
+    void quit(){
+    driver.quit();
     }
 }
+
+

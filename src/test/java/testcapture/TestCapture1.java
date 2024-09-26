@@ -5,9 +5,13 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import supports.Browser;
+import theInternet.TestLogin;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,6 +41,7 @@ public class TestCapture1 {
         }
 
     }
+
     @AfterTest
     void quitTest(){
         driver.quit();
