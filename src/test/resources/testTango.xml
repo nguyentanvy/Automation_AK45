@@ -1,0 +1,11 @@
+<suite name="TestTango" verbose="1">
+
+    <test name="TestUI">
+        <classes>
+            <class name="tango.pages.Login"/>
+            <class name="tango.pages.AdminDashboard"/>
+            <class name="tango.Untils"/>
+            <class name="tango.TestCase"/>
+        </classes>
+    </test>
+</suite>
