@@ -13,6 +13,8 @@ import tango.pages.Login;
 
 public class TestCase {
     WebDriver driver;
+     // Lưu trữ dashboard sau khi login
+
     @DataProvider
     Object[][] Account(){
         return new Object[][]{
@@ -32,11 +34,11 @@ public class TestCase {
         Login login = new Login(driver);
         AdminDashboard dashboard = login.LoginAction(username, password);
         if(dashboard.WaitAlert(driver)){
+            Assert.assertTrue(dashboard.WaitAlert(driver));
             System.out.println("Dang nhap thanh cong");
         }
         else {
             System.out.println("Dang nhap khong thanh cong!");
-            driver.quit();
         }
     }
     @Test
