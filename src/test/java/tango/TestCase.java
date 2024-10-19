@@ -11,14 +11,18 @@ import org.testng.annotations.Test;
 import tango.pages.AdminDashboard;
 import tango.pages.Login;
 
+import static tango.Untils.NavigateToPage;
+
 public class TestCase {
     WebDriver driver;
+    AdminDashboard dashboard;
      // Lưu trữ dashboard sau khi login
 
     @DataProvider
     Object[][] Account(){
         return new Object[][]{
-                {"admin@gmail.com","admin123"}
+                {"admin@gmail.com","admin123"},
+//                {"admin123@gmail.com","admin123"}
 
         };
     }
@@ -29,10 +33,10 @@ public class TestCase {
 
         driver.manage().window().maximize();
     }
-    @Test(dataProvider = "Account")
+    @Test(dataProvider = "Account", priority = 1)
     void TestLogin(String username, String password){
         Login login = new Login(driver);
-        AdminDashboard dashboard = login.LoginAction(username, password);
+        dashboard = login.LoginAction(username, password);
         if(dashboard.WaitAlert(driver)){
             Assert.assertTrue(dashboard.WaitAlert(driver));
             System.out.println("Dang nhap thanh cong");
@@ -41,8 +45,12 @@ public class TestCase {
             System.out.println("Dang nhap khong thanh cong!");
         }
     }
-    @Test
+    @Test(priority = 2, dependsOnMethods = {"TestLogin"})
     void TestOverview(){
+        String path="/business-overview";
+        NavigateToPage(path, driver);
+        Assert.assertEquals();
+
 
     }
     @AfterClass

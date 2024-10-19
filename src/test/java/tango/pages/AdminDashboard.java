@@ -15,14 +15,15 @@ public class AdminDashboard {
     }
     public boolean WaitAlert(WebDriver driver){
         try{
-
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement alert = WaitLoadPage(driver,10,".ant-notification-notice-message");
         return alert.getText().contains("Login Success");
-    } catch (TimeoutException e) {
+        } catch (TimeoutException e) {
         // Nếu không có alert xuất hiện, trả về false
         return false;
+        }
     }
+    public Overview ClickOverview(){
+
     }
 
 }
