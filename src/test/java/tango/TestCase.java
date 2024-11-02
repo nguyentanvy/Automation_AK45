@@ -49,7 +49,6 @@ public class TestCase {
     void TestOverview(){
         String path="/business-overview";
         NavigateToPage(path, driver);
-        Assert.assertEquals();
 
 
     }
