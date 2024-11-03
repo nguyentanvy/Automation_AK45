@@ -1,6 +1,25 @@
 <suite name="TestTango" verbose="1">
 
-    <test name="TestUI">
+    <test name="TestChrome">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="tango.pages.Login"/>
+            <class name="tango.pages.AdminDashboard"/>
+            <class name="tango.Untils"/>
+            <class name="tango.TestCase"/>
+        </classes>
+    </test>
+    <test name="TestEdge">
+        <parameter name ="browser" value="Edge"/>
+        <classes>
+            <class name="tango.pages.Login"/>
+            <class name="tango.pages.AdminDashboard"/>
+            <class name="tango.Untils"/>
+            <class name="tango.TestCase"/>
+        </classes>
+    </test>
+    <test name="TestFireFox">
+        <parameter name="browser" value="Firefox"/>
         <classes>
             <class name="tango.pages.Login"/>
             <class name="tango.pages.AdminDashboard"/>
