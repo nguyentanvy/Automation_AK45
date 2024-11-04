@@ -1,9 +1,6 @@
 package tango.pages;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import static tango.Untils.WaitLoadPage;
 
@@ -15,7 +12,7 @@ public class AdminDashboard {
     }
     public boolean WaitAlert(WebDriver driver){
         try{
-        WebElement alert = WaitLoadPage(driver,10,".ant-notification-notice-message");
+        WebElement alert = WaitLoadPage(driver,10, By.cssSelector(".ant-notification-notice-message"));
         return alert.getText().contains("Login Success");
         } catch (TimeoutException e) {
         // Nếu không có alert xuất hiện, trả về false

@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Untils {
-    private static WebDriver driver;
+//    private static WebDriver driver;
     public static Alert WaitLoadAlert(WebDriver driver, long time) {
         // Tạo WebDriverWait với tham số truyền vào là driver
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
@@ -23,14 +23,15 @@ public class Untils {
 
         // Trả về đối tượng Alert
     }
-    public static WebElement WaitLoadPage(WebDriver driver, long time, String css) {
+    public static WebElement WaitLoadPage(WebDriver driver, long time, By locator) {
         // Tạo WebDriverWait với tham số truyền vào là driver
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
 
         // Đợi cho đến khi element xuất hiện
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
     }
+
     public static WebElement WaitLoadClick(WebDriver driver, long time, WebElement we) {
         // Tạo WebDriverWait với tham số truyền vào là driver
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));

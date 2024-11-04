@@ -1,4 +1,4 @@
-<suite name="TestTango" verbose="1">
+<suite name="TestTangoAdmin" verbose="1">
 
     <test name="TestChrome">
         <parameter name="browser" value="Chrome"/>
@@ -6,7 +6,8 @@
             <class name="tango.pages.Login"/>
             <class name="tango.pages.AdminDashboard"/>
             <class name="tango.Untils"/>
-            <class name="tango.TestCase"/>
+            <class name="tango.TestCaseAdmin"/>
+            <class name ="tango.pages.Overview"/>
         </classes>
     </test>
     <test name="TestEdge">
@@ -15,7 +16,8 @@
             <class name="tango.pages.Login"/>
             <class name="tango.pages.AdminDashboard"/>
             <class name="tango.Untils"/>
-            <class name="tango.TestCase"/>
+            <class name="tango.TestCaseAdmin"/>
+            <class name ="tango.pages.Overview"/>
         </classes>
     </test>
     <test name="TestFireFox">
@@ -24,7 +26,8 @@
             <class name="tango.pages.Login"/>
             <class name="tango.pages.AdminDashboard"/>
             <class name="tango.Untils"/>
-            <class name="tango.TestCase"/>
+            <class name="tango.TestCaseAdmin"/>
+            <class name ="tango.pages.Overview"/>
         </classes>
     </test>
 </suite>

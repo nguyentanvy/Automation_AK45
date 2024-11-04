@@ -1,5 +1,6 @@
 package tango.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,7 +29,7 @@ public class Login {
         PageFactory.initElements(driver, this);
     }
     public AdminDashboard LoginAction(String username, String password){
-        WaitLoadPage(driver, 10, "input#username");
+        WaitLoadPage(driver, 10, By.cssSelector("input#username"));
         byUserName.sendKeys(username);
         byPassword.sendKeys(password);
 //        byCapCha.click();
