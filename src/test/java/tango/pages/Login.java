@@ -21,9 +21,6 @@ public class Login {
     @FindBy(css="button[type='submit']")
      WebElement byLoginBtn;
 
-//    @FindBy(xpath = "//div[@id='rc-anchor-container']")
-//    WebElement byCapCha;
-
     public Login(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -32,7 +29,6 @@ public class Login {
         WaitLoadPage(driver, 10, By.cssSelector("input#username"));
         byUserName.sendKeys(username);
         byPassword.sendKeys(password);
-//        byCapCha.click();
         WaitLoadClick(driver, 20, byLoginBtn).click();
         return new AdminDashboard(driver);
     }

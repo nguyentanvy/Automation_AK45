@@ -54,7 +54,7 @@ public class TestCaseAdmin {
 
     @Test
     public void TestOverview() {
-        String path = "/business-overview";
+        String path = "/admin/business-overview";
         NavigateToPage(path, driver);
         Overview overview = new Overview(driver);
         Assert.assertTrue(overview.checkOverview(driver), "Screen is not display");
@@ -62,17 +62,45 @@ public class TestCaseAdmin {
     }
     @Test
     public void TestJobs(){
-        String path = "/job-list";
+        String path = "/admin/job-list";
         NavigateToPage(path, driver);
         Jobs jobs = new Jobs(driver);
         Assert.assertTrue(jobs.checkJobs(driver),"Jobs Screen is not display");
     }
     @Test
     public void TestUser(){
-        String path = "/user";
+        String path = "/admin/user";
         NavigateToPage(path, driver);
         User user = new User(driver);
         Assert.assertTrue(user.checkUser(driver),"User screen is not display");
+    }
+    @Test
+    public void TestAdminContractor(){
+        String path = "/admin/contractor";
+        NavigateToPage(path, driver);
+        AdminContractor adminContractor = new AdminContractor(driver);
+        Assert.assertTrue(adminContractor.checkAdminContractor(driver),"AdminContractor screen is not display");
+    }
+    @Test
+    public void TestAdminAdviser(){
+        String path = "/admin/adviser";
+        NavigateToPage(path, driver);
+        AdminAdviser adminAdviser= new AdminAdviser(driver);
+        Assert.assertTrue(adminAdviser.checkAdminAdviser(driver),"AdminAdviser screen is not display");
+    }
+    @Test
+    public void TestMessages(){
+        String path = "/admin/messages";
+        NavigateToPage(path, driver);
+        Messages messages = new Messages(driver);
+        Assert.assertTrue(messages.checkMessage(driver),"Messages screen is not display");
+    }
+    @Test
+    public void TestAddOns(){
+        String path = "/adviser/subscription";
+        NavigateToPage(path, driver);
+        AddOns addOns = new AddOns(driver);
+        Assert.assertTrue(addOns.checkAddons(driver),"AddOns screen is not display");
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {

@@ -17,7 +17,7 @@ public class AdminContractor {
     public boolean checkAdminContractor (WebDriver driver){
         try {
             WebElement textContractor = WaitLoadPage(driver, 15, By.xpath("//p[.='Profile - Name']"));
-            return textContractor.getText().contains("Profile-Name");
+            return textContractor.isDisplayed() && textContractor.getText().contains("Profile - Name");
         }
         catch (TimeoutException e){
             return false;

@@ -8,16 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 
 import static tango.Untils.WaitLoadPage;
 
-public class User {
+public class Messages {
     WebDriver driver;
-    public User(WebDriver driver){
-        this.driver = driver;
+    public Messages(WebDriver driver){
+        this.driver=driver;
         PageFactory.initElements(driver, this);
     }
-    public boolean checkUser(WebDriver driver){
+    public boolean checkMessage (WebDriver driver){
         try {
-            WebElement  textUser = WaitLoadPage(driver, 15, By.xpath("//span[.='TOTAL']"));
-            return textUser.isDisplayed() && textUser.getText().contains("TOTAL");
+            WebElement textMessage = WaitLoadPage(driver, 15, By.xpath("//div[@class='ant-tabs-tab-btn' and .='CHATS']"));
+            return textMessage.isDisplayed();
         }
         catch (TimeoutException e){
             return false;

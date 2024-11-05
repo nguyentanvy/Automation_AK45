@@ -13,7 +13,7 @@ public class AdminDashboard {
     public boolean WaitAlert(WebDriver driver){
         try{
         WebElement alert = WaitLoadPage(driver,10, By.cssSelector(".ant-notification-notice-message"));
-        return alert.getText().contains("Login Success");
+        return alert.isDisplayed() && alert.getText().contains("Login Success");
         } catch (TimeoutException e) {
         // Nếu không có alert xuất hiện, trả về false
         return false;

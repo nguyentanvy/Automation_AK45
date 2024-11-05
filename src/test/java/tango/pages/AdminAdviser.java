@@ -17,7 +17,7 @@ public class AdminAdviser {
     public boolean checkAdminAdviser (WebDriver driver){
         try {
             WebElement textAdviser = WaitLoadPage(driver, 15, By.xpath("//p[.='Profile - Name']"));
-            return textAdviser.getText().contains("Profile-Name");
+            return textAdviser.isDisplayed() && textAdviser.getText().contains("Profile - Name");
         }
         catch (TimeoutException e){
             return false;

@@ -44,7 +44,7 @@ public class Untils {
        return driver.findElement(By.cssSelector(css));
     }
     public static void NavigateToPage(String page, WebDriver driver){
-        driver.navigate().to("http://13.210.211.91:5177/admin"+page);
+        driver.navigate().to("http://13.210.211.91:5177"+page);
     }
     public static WebDriver OptionBrowser(String browser){
         WebDriver driver = null; // Khởi tạo driver ở đây

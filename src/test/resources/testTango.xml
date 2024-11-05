@@ -8,6 +8,10 @@
             <class name="tango.Untils"/>
             <class name="tango.TestCaseAdmin"/>
             <class name ="tango.pages.Overview"/>
+            <class name="tango.pages.AdminAdviser"/>
+            <class name="tango.pages.AdminContractor"/>
+            <class name="tango.pages.Messages"/>
+            <class name="tango.pages.AddOns"/>
         </classes>
     </test>
     <test name="TestEdge">
@@ -18,6 +22,10 @@
             <class name="tango.Untils"/>
             <class name="tango.TestCaseAdmin"/>
             <class name ="tango.pages.Overview"/>
+            <class name="tango.pages.AdminAdviser"/>
+            <class name="tango.pages.AdminContractor"/>
+            <class name="tango.pages.Messages"/>
+            <class name="tango.pages.AddOns"/>
         </classes>
     </test>
     <test name="TestFireFox">
@@ -28,6 +36,10 @@
             <class name="tango.Untils"/>
             <class name="tango.TestCaseAdmin"/>
             <class name ="tango.pages.Overview"/>
+            <class name="tango.pages.AdminAdviser"/>
+            <class name="tango.pages.AdminContractor"/>
+            <class name="tango.pages.Messages"/>
+            <class name="tango.pages.AddOns"/>
         </classes>
     </test>
 </suite>

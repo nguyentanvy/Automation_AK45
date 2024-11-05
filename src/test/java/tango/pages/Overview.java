@@ -18,8 +18,8 @@ public class Overview {
 
     public boolean checkOverview(WebDriver driver) {
         try {
-            WebElement textOverview = WaitLoadPage(driver,10, By.xpath("//article[.='Business Overview']"));
-            return textOverview.getText().contains("Business Overview");
+            WebElement textOverview = WaitLoadPage(driver,20, By.xpath("//article[.='Business Overview']"));
+            return textOverview.isDisplayed() && textOverview.getText().contains("Business Overview");
         } catch (TimeoutException e) {
             return false;
         }
